@@ -2,6 +2,10 @@
 
 # tomledit
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/JosiahParry/tomledit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JosiahParry/tomledit/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
 Create or edit TOML documents from R using `tomledit`.
 
 `tomledit` is written in Rust using

@@ -7,3 +7,7 @@
 ^LICENSE\.md$
 ^README\.qmd$
 ^dev$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
