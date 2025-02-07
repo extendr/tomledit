@@ -1,0 +1,23 @@
+Package: tomledit
+Title: Parse, Read, and Edit 'TOML'
+Version: 0.1.0
+Authors@R: 
+    person("Josiah", "Parry", , "josiah.parry@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9910-865X"))
+Description: A toolkit for working with TOML files in R while preserving
+    formatting, comments, and structure. 'tomledit' provides functions to
+    read, write, parse, and edit 'TOML' files programmatically, ensuring
+    that existing comments and whitespace remain intact. 'tomledit'
+    enables serialization of R objects such as lists, data.frames,
+    numeric, logical, and date vectors.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Config/rextendr/version: 0.3.1.9001
+SystemRequirements: Cargo (Rust's package manager), rustc
+Depends:
+    R (>= 4.1.0)
+Imports: 
+    rlang (>= 1.1.0)

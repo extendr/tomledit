@@ -1,0 +1,9 @@
+^tomledit\.Rproj$
+^\.Rproj\.user$
+^src/\.cargo$
+^src/rust/vendor$
+^src/Makevars$
+^src/Makevars\.win$
+^LICENSE\.md$
+^README\.qmd$
+^dev$
