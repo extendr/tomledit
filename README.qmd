@@ -17,7 +17,7 @@ Create or edit TOML documents from R using `tomledit`.
 While the package is still under development, install the package from GitHub using: 
 
 ```{r eval = FALSE}
-remotes::install_github("extendr/tomledit")
+remotes::install_github("josiahparry/tomledit")
 ```
 
 
@@ -100,6 +100,11 @@ Individual items can be fetched recursively from the `Toml` document.
 get_item(y, c("date_parts", "month"))
 ```
 
+Or the entire `Toml` document can be converted to a list. Note, though, that it is not always possible to perform a perfect round trip of R objects and TOML.
+
+```{r}
+from_toml(y)
+```
 
 
 ## Array of Tables
