@@ -93,7 +93,7 @@ impl Toml {
         Ok(item_to_robj(item))
     }
 
-    fn to_robj(&self) -> Robj {
+    fn from_toml(&self) -> Robj {
         item_to_robj(self.0.as_item())
     }
 }

@@ -8,6 +8,13 @@
 \description{
 A toolkit for working with TOML files in R while preserving formatting, comments, and structure. 'tomledit' provides functions to read, write, parse, and edit 'TOML' files programmatically, ensuring that existing comments and whitespace remain intact. 'tomledit' enables serialization of R objects such as lists, data.frames, numeric, logical, and date vectors.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://josiahparry.github.io/tomledit/}
+}
+
+}
 \author{
 \strong{Maintainer}: Josiah Parry \email{josiah.parry@gmail.com} (\href{https://orcid.org/0000-0001-9910-865X}{ORCID})
 

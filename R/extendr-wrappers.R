@@ -30,7 +30,7 @@ Toml$remove_item <- function(key) .Call(wrap__Toml__remove_item, self, key)
 
 Toml$get_item <- function(x) .Call(wrap__Toml__get_item, self, x)
 
-Toml$to_robj <- function() .Call(wrap__Toml__to_robj, self)
+Toml$from_toml <- function() .Call(wrap__Toml__from_toml, self)
 
 #' @export
 `$.Toml` <- function (self, name) { func <- Toml[[name]]; environment(func) <- environment(); func }
