@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-02-07T23:39Z
+last_built: 2025-02-08T22:56Z
 urls:
   reference: https://josiahparry.github.io/tomledit/reference
   article: https://josiahparry.github.io/tomledit/articles
