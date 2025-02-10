@@ -4,12 +4,9 @@ Version: 0.1.0
 Authors@R: 
     person("Josiah", "Parry", , "josiah.parry@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9910-865X"))
-Description: A toolkit for working with TOML files in R while preserving
-    formatting, comments, and structure. 'tomledit' provides functions to
-    read, write, parse, and edit 'TOML' files programmatically, ensuring
-    that existing comments and whitespace remain intact. 'tomledit'
-    enables serialization of R objects such as lists, data.frames,
-    numeric, logical, and date vectors.
+Description: A toolkit for working with 'TOML' files in R while preserving
+    formatting, comments, and structure. 'tomledit' enables serialization of R
+    objects such as lists, data.frames, numeric, logical, and date vectors.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: en
