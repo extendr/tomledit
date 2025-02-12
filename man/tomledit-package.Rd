@@ -6,7 +6,7 @@
 \alias{tomledit-package}
 \title{tomledit: Parse, Read, and Edit 'TOML'}
 \description{
-A toolkit for working with TOML files in R while preserving formatting, comments, and structure. 'tomledit' provides functions to read, write, parse, and edit 'TOML' files programmatically, ensuring that existing comments and whitespace remain intact. 'tomledit' enables serialization of R objects such as lists, data.frames, numeric, logical, and date vectors.
+A toolkit for working with 'TOML' files in R while preserving formatting, comments, and structure. 'tomledit' enables serialization of R objects such as lists, data.frames, numeric, logical, and date vectors.
 }
 \seealso{
 Useful links:
