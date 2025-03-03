@@ -5,31 +5,28 @@ use toml_edit::{ArrayOfTables, InlineTable, Item, Table, Value};
 
 // Tables
 pub(crate) fn as_kv_pairs(x: List) -> Res<Vec<(&'static str, Value)>, TomlEditRError> {
-    let n = x.len();
     let err = Err(TomlEditRError::CrateError(String::from(
-        "All elements must be named",
+        "Lists must contain only named elements or no named elements",
     )));
     let names = x.names();
-    match names {
-        None => return err,
-        Some(nm) => {
-            let n_names = nm.len();
-            if n_names != n {
-                return err;
-            }
-            let kvs = x
-                .into_iter()
-                .filter_map(|(nm, obj)| {
-                    let v = as_value(obj);
-                    match v {
-                        Ok(vv) => Some((nm, vv)),
-                        Err(_) => None,
-                    }
-                })
-                .collect::<Vec<_>>();
-            Ok(kvs)
+
+    if let Some(mut nm) = names {
+        if nm.any(|xi| xi.is_empty()) {
+            return err;
         }
     }
+    let kvs = x
+        .into_iter()
+        .filter_map(|(nm, obj)| {
+            let v = as_value(obj);
+            match v {
+                Ok(vv) => Some((nm, vv)),
+                Err(_) => None,
+            }
+        })
+        .collect::<Vec<_>>();
+
+    Ok(kvs)
 }
 
 pub(crate) fn as_inline_table(x: List) -> Res<InlineTable, TomlEditRError> {

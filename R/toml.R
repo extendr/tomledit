@@ -26,7 +26,7 @@
 #'   )
 #' )
 as_toml <- function(x, df_as_array = TRUE) {
-  check_list_named(x)
+  # check_list_named(x)
   .catch(Toml$new()$insert_list(x, df_as_array))
 }
 
@@ -34,6 +34,6 @@ as_toml <- function(x, df_as_array = TRUE) {
 #' @rdname toml
 toml <- function(..., df_as_array = TRUE) {
   dots <- rlang::list2(...)
-  check_list_named(dots)
+  # check_list_named(dots)
   .catch(Toml$new()$insert_list(dots, df_as_array))
 }

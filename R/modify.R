@@ -42,7 +42,7 @@ remove_items <- function(x, keys) {
 #' @export
 insert_items <- function(x, ..., df_as_array = TRUE) {
   dots <- rlang::list2(...)
-  check_list_named(dots)
+  # check_list_named(dots)
   .catch(x$insert_list(dots, df_as_array))
 }
 
