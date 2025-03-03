@@ -170,7 +170,10 @@ pub(crate) fn as_value(x: Robj) -> Res<Value, TomlEditRError> {
                 false => Ok(Value::Array(as_array_strings(inner))),
             }
         }
-        Rtype::List => Ok(Value::InlineTable(as_inline_table(List::try_from(x)?)?)),
+        Rtype::List => match x.names() {
+            Some(_) => Ok(Value::InlineTable(as_inline_table(List::try_from(x)?)?)),
+            None => Ok(Value::Array(as_array_list(x.try_into()?)?)),
+        },
         Rtype::Rstr => {
             let inner = Rstr::try_from(x)?;
             as_value_string(inner.into())

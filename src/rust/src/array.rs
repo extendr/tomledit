@@ -2,6 +2,8 @@ use extendr_api::prelude::*;
 use std::num::ParseIntError;
 use toml_edit::{Array, Date};
 
+use crate::as_value;
+
 pub(crate) fn as_array_strings(x: Strings) -> Array {
     let mut arr = Array::new();
     for xi in x.into_iter() {
@@ -40,6 +42,17 @@ pub(crate) fn as_array_logicals(x: Logicals) -> Array {
         }
     }
     arr
+}
+
+pub(crate) fn as_array_list(x: List) -> Result<Array> {
+    let mut arr = Array::new();
+    for (_, xi) in x.into_iter() {
+        let mut v = as_value(xi)?;
+        v.decor_mut().set_prefix("\n    ");
+        arr.push_formatted(v)
+    }
+    arr.set_trailing("\n");
+    Ok(arr)
 }
 
 pub(crate) fn parse_date(xi: &str) -> std::result::Result<Date, ParseIntError> {

@@ -60,7 +60,7 @@ impl Toml {
         res
     }
 
-    fn format_lines(&self) -> Strings {
+    fn format_lines(&mut self) -> Strings {
         self.format().split("\n").collect::<Strings>()
     }
 
@@ -68,9 +68,7 @@ impl Toml {
         let mut new = self.clone();
 
         for (k, v) in x.into_iter() {
-            if !k.is_empty() {
-                new.0.insert(k, as_item(v, df_as_array)?);
-            }
+            new.0.insert(k, as_item(v, !k.is_empty(), df_as_array)?);
         }
 
         Ok(new)
