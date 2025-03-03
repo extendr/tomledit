@@ -18,4 +18,5 @@ Depends:
     R (>= 4.1.0)
 Imports: 
     rlang (>= 1.1.0)
-URL: https://josiahparry.github.io/tomledit/
+URL: https://extendr.github.io/tomledit/, https://github.com/extendr/tomledit
+BugReports: https://github.com/extendr/tomledit/issues

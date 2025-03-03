@@ -3,7 +3,7 @@
 # tomledit
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/JosiahParry/tomledit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JosiahParry/tomledit/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/extendr/tomledit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/extendr/tomledit/actions/workflows/R-CMD-check.yaml)
 [![extendr](https://img.shields.io/badge/extendr-%5E0.7.1-276DC2)](https://extendr.github.io/extendr/extendr_api/)
 <!-- badges: end -->
 
@@ -15,11 +15,16 @@ Create or edit TOML documents from R using `tomledit`.
 
 ## Installation
 
-While the package is still under development, install the package from
-GitHub using:
+Install the package from CRAN using
 
 ``` r
-remotes::install_github("josiahparry/tomledit")
+install.packages("tomledit")
+```
+
+or, install the development version using
+
+``` r
+remotes::install_github("extendr/tomledit")
 ```
 
 ## Usage
@@ -121,7 +126,7 @@ y
     # Top-level table begins.
     name = "Fido"
     breed = "pug"
-    date = 2025-02-20
+    date = 2025-03-03
 
     # Top-level table ends.
     [owner]
@@ -180,7 +185,7 @@ from_toml(y)
 
 
     $date
-    [1] "2025-02-20"
+    [1] "2025-03-03"
 
     $date_parts
     $date_parts$year

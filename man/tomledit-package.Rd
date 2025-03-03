@@ -11,7 +11,9 @@ A toolkit for working with 'TOML' files in R while preserving formatting, commen
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://josiahparry.github.io/tomledit/}
+  \item \url{https://extendr.github.io/tomledit/}
+  \item \url{https://github.com/extendr/tomledit}
+  \item Report bugs at \url{https://github.com/extendr/tomledit/issues}
 }
 
 }
