@@ -3,6 +3,12 @@
 version = 4
 
 [[package]]
+name = "build-print"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4a2128d00b7061b82b72844a351e80acd29e05afc60e9261e2ac90dca9ecc2ac"
+
+[[package]]
 name = "equivalent"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -11,20 +17,26 @@ checksum = "5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5"
 [[package]]
 name = "extendr-api"
 version = "0.7.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67505d96c7faa49d20e749dba7ba2447db52c40a788fd88cc2b6bef02c02277a"
+source = "git+https://github.com/extendr/extendr?branch=dataptr#97b180b5d078deb1f42cbeec4616abf1f60d8645"
 dependencies = [
+ "extendr-ffi",
  "extendr-macros",
- "libR-sys",
  "once_cell",
  "paste",
 ]
 
 [[package]]
+name = "extendr-ffi"
+version = "0.8.0"
+source = "git+https://github.com/extendr/extendr?branch=dataptr#97b180b5d078deb1f42cbeec4616abf1f60d8645"
+dependencies = [
+ "build-print",
+]
+
+[[package]]
 name = "extendr-macros"
 version = "0.7.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81b58838056f294411d0b2c35ac1a2b24c507d6828b75f2c1e74f00ee9b99267"
+source = "git+https://github.com/extendr/extendr?branch=dataptr#97b180b5d078deb1f42cbeec4616abf1f60d8645"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -46,12 +58,6 @@ dependencies = [
  "equivalent",
  "hashbrown",
 ]
-
-[[package]]
-name = "libR-sys"
-version = "0.7.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06ac9752bc1e83f5a354a62b9e81bd8db4468b1008e29f262441e7f0e91e6bb3"
 
 [[package]]
 name = "memchr"

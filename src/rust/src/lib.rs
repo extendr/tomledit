@@ -16,6 +16,7 @@ pub(crate) use table::*;
 pub(crate) use to_robj::*;
 pub(crate) use values::*;
 
+#[extendr]
 #[derive(Clone)]
 pub struct Toml(pub DocumentMut);
 

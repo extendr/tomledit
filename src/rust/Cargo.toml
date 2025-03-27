@@ -15,3 +15,6 @@ toml_edit = { version = "0.22.23" }
 [profile.release]
 codegen-units = 1
 lto = true
+
+[patch.crates-io]
+extendr-api = { git = "https://github.com/extendr/extendr", branch = "dataptr"}
