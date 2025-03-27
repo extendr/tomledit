@@ -61,7 +61,7 @@ if (file.exists(mv_ofp)) {
 }
 
 # read as a single string
-mv_txt <- readChar(mv_fp, file.info(mv_fp)$size)
+mv_txt <- readLines(mv_fp)
 
 # replace placeholder values
 new_txt <- gsub("@CRAN_FLAGS@", .cran_flags, mv_txt) |>
@@ -70,6 +70,8 @@ new_txt <- gsub("@CRAN_FLAGS@", .cran_flags, mv_txt) |>
   gsub("@LIBDIR@", .libdir, x = _)
 
 message("Writing `", mv_ofp, "`.")
-writeLines(new_txt, mv_ofp, sep = "")
+con <- file(mv_ofp, open = "wb")
+writeLines(new_txt, con, sep = "\n")
+close(con)
 
 message("`tools/config.R` has finished.")
