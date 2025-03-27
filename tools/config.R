@@ -26,7 +26,7 @@ if (!is_not_cran) {
 # the vendored crates are present.
 .cran_flags <- ifelse(
   !is_not_cran && vendor_exists,
-  "--j 2 --offline",
+  "-j 2 --offline",
   ""
 )
 
@@ -70,6 +70,6 @@ new_txt <- gsub("@CRAN_FLAGS@", .cran_flags, mv_txt) |>
   gsub("@LIBDIR@", .libdir, x = _)
 
 message("Writing `", mv_ofp, "`.")
-writeLines(new_txt, mv_ofp)
+writeLines(new_txt, mv_ofp, sep = "")
 
 message("`tools/config.R` has finished.")
