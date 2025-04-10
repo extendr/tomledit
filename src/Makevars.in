@@ -5,6 +5,8 @@ PKG_LIBS = -L$(LIBDIR) -ltomledit
 
 all: $(SHLIB) rust_clean
 
+.PHONY: $(STATLIB)
+
 $(SHLIB): $(STATLIB)
 
 CARGOTMP = $(CURDIR)/.cargo
@@ -37,7 +39,7 @@ $(STATLIB):
 	# Always clean up CARGOTMP
 	rm -Rf $(CARGOTMP);
 
-rust_clean:
+rust_clean: $(SHLIB)
 	rm -Rf $(CARGOTMP) $(VENDOR_DIR) @CLEAN_TARGET@
 
 clean:

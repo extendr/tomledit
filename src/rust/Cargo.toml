@@ -3,7 +3,7 @@ name = 'tomledit'
 publish = false
 version = '0.1.0'
 edition = '2021'
-rust-version = "1.68.0"
+rust-version = "1.65.0"
 
 [lib]
 crate-type = [ 'staticlib' ]
@@ -16,6 +16,3 @@ toml_edit = { version = "0.22.23" }
 [profile.release]
 codegen-units = 1
 lto = true
-
-[patch.crates-io]
-extendr-api = { git = "https://github.com/extendr/extendr", branch = "dataptr"}

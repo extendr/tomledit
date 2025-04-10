@@ -1,6 +1,6 @@
 Package: tomledit
 Title: Parse, Read, and Edit 'TOML'
-Version: 0.1.0.9000
+Version: 0.1.1
 Authors@R: 
     person("Josiah", "Parry", , "josiah.parry@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-9910-865X"))
@@ -15,7 +15,7 @@ RoxygenNote: 7.3.2
 Config/rextendr/version: 0.3.1.9001
 SystemRequirements: Cargo (Rust's package manager), rustc
 Depends:
-    R (>= 4.1.0)
+    R (>= 4.2)
 Imports: 
     rlang (>= 1.1.0)
 URL: https://extendr.github.io/tomledit/, https://github.com/extendr/tomledit
