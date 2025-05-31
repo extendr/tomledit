@@ -22,21 +22,16 @@ pub(crate) fn determine_array_rtype(array: &Array) -> Rtype {
         return Rtype::Null;
     }
 
-    let mut items = array.iter();
-    let first_item = items.next().unwrap();
-    let init_type = match_toml_type(first_item.type_name());
-    for item in items {
-        let next_type = match_toml_type(item.type_name());
-        rt = match (&init_type, next_type) {
-            (Rtype::Integers, Rtype::Integers) => Rtype::Integers,
-            (Rtype::Integers, Rtype::Doubles) => Rtype::Doubles,
-            (Rtype::Doubles, Rtype::Integers) => Rtype::Doubles,
-            (Rtype::Strings, Rtype::Strings) => Rtype::Strings,
-            (Rtype::Logicals, Rtype::Logicals) => Rtype::Logicals,
-            _ => Rtype::List,
-        };
-    }
+    for (i, item) in array.iter().enumerate() {
+        if i == 0 {
+            rt = match_toml_type(item.type_name());
+        }
 
+        let ttype = match_toml_type(item.type_name());
+        if !rt.eq(&ttype) {
+            return Rtype::List;
+        }
+    }
     rt
 }
 
