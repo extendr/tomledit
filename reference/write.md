@@ -44,12 +44,12 @@ x <- toml(
 write_toml(x, tmp)
 read_toml(tmp)
 #> <Toml>
-#> today = 2026-02-10
+#> today = 2026-07-26
 #> 
 #> [human]
 #> person = "Greg"
 #> age = 29.0
 #> bday = "1969-07-02"
 to_toml(x)
-#> [1] "today = 2026-02-10\n\n[human]\nperson = \"Greg\"\nage = 29.0\nbday = \"1969-07-02\"\n"
+#> [1] "today = 2026-07-26\n\n[human]\nperson = \"Greg\"\nage = 29.0\nbday = \"1969-07-02\"\n"
 ```

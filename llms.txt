@@ -11,12 +11,14 @@ Create or edit TOML documents from R using `tomledit`.
 Install the package from CRAN using
 
 ``` r
+
 install.packages("tomledit")
 ```
 
 or, install the development version using
 
 ``` r
+
 remotes::install_github("extendr/tomledit")
 ```
 
@@ -31,6 +33,7 @@ Use [`as_toml()`](https://extendr.github.io/tomledit/reference/toml.md)
 to convert a list to TOML:
 
 ``` r
+
 library(tomledit)
 
 as_toml(
@@ -51,6 +54,7 @@ Create TOML directly by passing key values to
 [`toml()`](https://extendr.github.io/tomledit/reference/toml.md):
 
 ``` r
+
 x <- toml(person = list(age = 30L, name = "Wilma"))
 x
 ```
@@ -65,6 +69,7 @@ name = "Wilma"
 Or, parse a string as TOML while preserving comments:
 
 ``` r
+
 raw_toml <- '# Top-level table begins.
 name = "Fido"
 breed = "pug"
@@ -94,6 +99,7 @@ Write a `Toml` object to a file using
 [`write_toml()`](https://extendr.github.io/tomledit/reference/write.md).
 
 ``` r
+
 tmp <- tempfile(fileext = ".toml")
 
 write_toml(x, tmp)
@@ -103,6 +109,7 @@ Read a TOML file using
 [`read_toml()`](https://extendr.github.io/tomledit/reference/read.md).
 
 ``` r
+
 read_toml(tmp)
 ```
 
@@ -122,6 +129,7 @@ Items can be inserted into a `Toml` document using
 [`insert_items()`](https://extendr.github.io/tomledit/reference/modify.md)
 
 ``` r
+
 y <- x |> 
   insert_items(
     date = Sys.Date(),
@@ -153,6 +161,7 @@ Or items can be removed as well using
 [`remove_items()`](https://extendr.github.io/tomledit/reference/modify.md)
 
 ``` r
+
 remove_items(y, c("date", "date_parts"))
 ```
 
@@ -171,6 +180,7 @@ member_since = 1999-08-04
 Individual items can be fetched recursively from the `Toml` document.
 
 ``` r
+
 get_item(y, c("date_parts", "month"))
 ```
 
@@ -183,6 +193,7 @@ that it is not always possible to perform a perfect round trip of R
 objects and TOML.
 
 ``` r
+
 from_toml(y)
 ```
 
@@ -221,6 +232,7 @@ By default `tomledit` converts `data.frame` objects to an [array of
 tables](https://toml.io/en/v1.0.0#array-of-tables).
 
 ``` r
+
 toml(iris = iris[1:3,])
 ```
 
@@ -253,6 +265,7 @@ that are encountered in the wild. To create a single table from a
 `data.frame`, set the argument `df_as_array = FALSE`.
 
 ``` r
+
 toml(
   iris = iris[1:3,],
   df_as_array = FALSE
@@ -277,6 +290,7 @@ because there is no concept of a missing or null value in TOML.
 Take the following example:
 
 ``` r
+
 x <- data.frame(
   x = c(1L, NA, 2L),
   y = letters[1:3]
@@ -287,6 +301,7 @@ Notice that when this `data.frame` is serialized to TOML the missing `x`
 value is omitted:
 
 ``` r
+
 toml(table = x)
 ```
 
@@ -308,6 +323,7 @@ Whereas when serializing to a single table the `x` array has 2 elements
 whereas the `y` element has 3 elements.
 
 ``` r
+
 toml(table = x, df_as_array = FALSE)
 ```
 
