@@ -9,7 +9,7 @@ vectors.
 
 Useful links:
 
-- <https://extendr.github.io/tomledit/>
+- <https://extendr.rs/tomledit/>
 
 - <https://github.com/extendr/tomledit>
 
