@@ -4,13 +4,13 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/extendr/tomledit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/extendr/tomledit/actions/workflows/R-CMD-check.yaml)
-[![extendr](https://img.shields.io/badge/extendr-%5E0.7.1-276DC2)](https://extendr.github.io/extendr/extendr_api/)
+[![extendr](https://img.shields.io/badge/extendr-%5E0.7.1-276DC2)](https://extendr.rs/extendr/extendr_api/)
 <!-- badges: end -->
 
 Create or edit TOML documents from R using `tomledit`.
 
 `tomledit` is written in Rust using
-[extendr](https://extendr.github.io/) and the
+[extendr](https://extendr.rs/) and the
 [`toml_edit`](https://docs.rs/toml_edit/) crate.
 
 ## Installation
