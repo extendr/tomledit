@@ -2,9 +2,8 @@
 
 Create or edit TOML documents from R using `tomledit`.
 
-`tomledit` is written in Rust using
-[extendr](https://extendr.github.io/) and the
-[`toml_edit`](https://docs.rs/toml_edit/) crate.
+`tomledit` is written in Rust using [extendr](https://extendr.rs/) and
+the [`toml_edit`](https://docs.rs/toml_edit/) crate.
 
 ## Installation
 
@@ -25,12 +24,11 @@ remotes::install_github("extendr/tomledit")
 ## Usage
 
 TOML can be created using either the
-[`as_toml()`](https://extendr.github.io/tomledit/reference/toml.md) or
-[`toml()`](https://extendr.github.io/tomledit/reference/toml.md)
-functions.
+[`as_toml()`](https://extendr.rs/tomledit/reference/toml.md) or
+[`toml()`](https://extendr.rs/tomledit/reference/toml.md) functions.
 
-Use [`as_toml()`](https://extendr.github.io/tomledit/reference/toml.md)
-to convert a list to TOML:
+Use [`as_toml()`](https://extendr.rs/tomledit/reference/toml.md) to
+convert a list to TOML:
 
 ``` r
 
@@ -51,7 +49,7 @@ name = "Wilma"
 ```
 
 Create TOML directly by passing key values to
-[`toml()`](https://extendr.github.io/tomledit/reference/toml.md):
+[`toml()`](https://extendr.rs/tomledit/reference/toml.md):
 
 ``` r
 
@@ -96,7 +94,7 @@ member_since = 1999-08-04
 ```
 
 Write a `Toml` object to a file using
-[`write_toml()`](https://extendr.github.io/tomledit/reference/write.md).
+[`write_toml()`](https://extendr.rs/tomledit/reference/write.md).
 
 ``` r
 
@@ -106,7 +104,7 @@ write_toml(x, tmp)
 ```
 
 Read a TOML file using
-[`read_toml()`](https://extendr.github.io/tomledit/reference/read.md).
+[`read_toml()`](https://extendr.rs/tomledit/reference/read.md).
 
 ``` r
 
@@ -126,7 +124,7 @@ member_since = 1999-08-04
 ```
 
 Items can be inserted into a `Toml` document using
-[`insert_items()`](https://extendr.github.io/tomledit/reference/modify.md)
+[`insert_items()`](https://extendr.rs/tomledit/reference/modify.md)
 
 ``` r
 
@@ -158,7 +156,7 @@ day = 7
 ```
 
 Or items can be removed as well using
-[`remove_items()`](https://extendr.github.io/tomledit/reference/modify.md)
+[`remove_items()`](https://extendr.rs/tomledit/reference/modify.md)
 
 ``` r
 
