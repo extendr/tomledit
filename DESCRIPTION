@@ -21,7 +21,7 @@ Depends:
     R (>= 4.2)
 Imports: 
     rlang (>= 1.1.0)
-URL: https://extendr.github.io/tomledit/, https://github.com/extendr/tomledit
+URL: https://extendr.rs/tomledit/, https://github.com/extendr/tomledit
 BugReports: https://github.com/extendr/tomledit/issues
 Suggests: 
     testthat (>= 3.0.0)
