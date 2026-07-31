@@ -10,7 +10,7 @@ crate-type = [ 'staticlib' ]
 name = 'tomledit'
 
 [dependencies]
-extendr-api = { version = "0.8.0", features = ["result_condition"] }
+extendr-api = { version = "0.8.2", features = ["result_condition"] }
 taplo = "0.13.2"
 toml_edit = { version = "0.24.0" }
 
