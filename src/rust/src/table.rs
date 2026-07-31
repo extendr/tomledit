@@ -3,16 +3,30 @@ use extendr_api::prelude::*;
 use std::result::Result as Res;
 use toml_edit::{ArrayOfTables, InlineTable, Item, Table, Value};
 
+// Is this something that becomes a table, i.e. a named list?
+pub(crate) fn is_table_like(x: &Robj) -> bool {
+    x.rtype() == Rtype::List && !x.inherits("data.frame") && x.names().is_some()
+}
+
 // Tables
 pub(crate) fn as_kv_pairs(x: List) -> Res<Vec<(&'static str, Value)>, TomlEditRError> {
     let err = Err(TomlEditRError::CrateError(String::from(
         "Lists must contain only named elements or no named elements",
     )));
-    let names = x.names();
 
-    if let Some(mut nm) = names {
-        if nm.any(|xi| xi.is_empty()) {
-            return err;
+    match x.names() {
+        Some(mut nm) => {
+            if nm.any(|xi| xi.is_empty()) {
+                return err;
+            }
+        }
+        // without names there are no keys to insert the values under
+        None => {
+            if !x.is_empty() {
+                return Err(TomlEditRError::CrateError(String::from(
+                    "A table cannot be created from an unnamed list",
+                )));
+            }
         }
     }
     let kvs = x
@@ -37,6 +51,23 @@ pub(crate) fn as_inline_table(x: List) -> Res<InlineTable, TomlEditRError> {
 pub(crate) fn as_table(x: List) -> Res<Table, TomlEditRError> {
     let kvs = as_kv_pairs(x)?;
     Ok(Table::from_iter(kvs))
+}
+
+// Array of Tables from a list of named lists e.g. `[[packages]]` entries
+pub(crate) fn as_tables(x: List) -> Res<ArrayOfTables, TomlEditRError> {
+    let mut arr = ArrayOfTables::new();
+
+    for i in 0..x.len() {
+        let tbl = x[i].clone();
+        if !is_table_like(&tbl) {
+            return Err(TomlEditRError::CrateError(String::from(
+                "An array of tables can only be created from named lists",
+            )));
+        }
+        arr.push(as_table(List::try_from(tbl)?)?);
+    }
+
+    Ok(arr)
 }
 
 // Array of Tables

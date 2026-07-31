@@ -76,7 +76,7 @@ impl Toml {
         let mut new = self.clone();
 
         for (k, v) in x.into_iter() {
-            new.0.insert(k, as_item(v, !k.is_empty(), df_as_array)?);
+            new.0.insert(k, as_item(v, df_as_array)?);
         }
 
         Ok(new)
